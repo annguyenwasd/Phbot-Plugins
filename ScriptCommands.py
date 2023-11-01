@@ -232,6 +232,16 @@ def OpenphBot(args):
 	log('Plugin: Invalid path to bot')
 	return 0
 
+#OpenphBot,path..opens a bat file
+def OpenBat(args):
+	cmdargs = args[1]
+	if os.path.exists(cmdargs):
+		subprocess.Popen(cmdargs)
+		log('Plugin: Opened bat' + cmdargs)
+		return 0
+	log('Plugin: Invalid path to bat' + cmdargs)
+	return 0
+
 #DismountPet,transport
 def DismountPet(args):
 	PetType = args[1].lower()
